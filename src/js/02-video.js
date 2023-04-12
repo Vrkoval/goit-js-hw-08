@@ -9,6 +9,7 @@ player
   .catch(function (error) {
     switch (error.name) {
       case 'RangeError':
+
         break;
 
       default:
@@ -19,6 +20,6 @@ player
 player.on(
   'timeupdate',
   throttle(time => {
-    localStorage.setItem('videoplayer-current-time', ${time.seconds});
+    localStorage.setItem('videoplayer-current-time', `${time.seconds}`);
   }, 1000)
 );
