@@ -9,18 +9,12 @@ player
   .then(function (seconds) {})
   .catch(function (error) {
     switch (error.name) {
-      case 'RangeError':
-
-        break;
-
-      default:
-        break;
+      case 'RangeError': break;
+      default: break;
     }
   });
 
-player.on(
-  'timeupdate',
-  throttle(time => {
+player.on( 'timeupdate',  throttle(time => {
     localStorage.setItem('videoplayer-current-time', `${time.seconds}`);
   }, 1000)
 );
